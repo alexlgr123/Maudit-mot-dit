@@ -142,17 +142,94 @@
 
   <script>
     const mots = [
-      "chat", "chien", "maison", "arbre", "soleil", "lune", "étoile", "fleur",
-      "forêt", "rivière", "montagne", "nuage", "pluie", "vent", "feu", "eau",
-      "terre", "ciel", "mer", "île", "pont", "rue", "ville", "village",
-      "jardin", "fenêtre", "porte", "table", "chaise", "livre", "stylo", "sac",
-      "pain", "fromage", "vin", "café", "thé", "soupe", "gâteau", "pomme",
-      "vélo", "voiture", "train", "bateau", "avion", "route", "plage", "lac",
-      "école", "marché", "musique", "chanson", "danse", "peinture", "sculpture",
-      "neige", "glace", "sable", "pierre", "bois", "métal", "verre", "tissu",
-      "enfant", "famille", "ami", "voisin", "médecin", "artisan", "fermier",
-      "matin", "soir", "nuit", "saison", "printemps", "été", "automne", "hiver",
-      "lettre", "journal", "histoire", "chemin", "champ", "vallon", "colline"
+      // Nature & paysages
+      "chat", "chien", "cheval", "vache", "mouton", "cochon", "poule", "lapin",
+      "renard", "loup", "cerf", "aigle", "hibou", "corbeau", "moineau", "canard",
+      "grenouille", "serpent", "tortue", "poisson", "baleine", "dauphin", "requin",
+      "arbre", "fleur", "herbe", "mousse", "fougère", "roseau", "lierre", "vigne",
+      "chêne", "sapin", "bouleau", "peuplier", "tilleul", "noyer", "cerisier",
+      "soleil", "lune", "étoile", "nuage", "pluie", "vent", "feu", "eau",
+      "neige", "glace", "brouillard", "tonnerre", "éclair", "arc-en-ciel", "rosée",
+      "forêt", "rivière", "montagne", "vallée", "colline", "plaine", "plateau",
+      "mer", "océan", "île", "cap", "falaise", "grotte", "marais", "étang",
+      "lac", "plage", "sable", "pierre", "rocher", "galets", "caillou",
+      "terre", "ciel", "horizon", "aurore", "crépuscule", "aube",
+      // Ville & vie quotidienne
+      "pont", "rue", "avenue", "boulevard", "allée", "chemin", "sentier",
+      "ville", "village", "bourg", "hameau", "quartier", "place", "carrefour",
+      "maison", "appartement", "immeuble", "château", "tour", "palais", "cathédrale",
+      "église", "temple", "mosquée", "synagogue", "école", "université", "bibliothèque",
+      "hôpital", "pharmacie", "marché", "boutique", "restaurant", "café", "hôtel",
+      "gare", "aéroport", "port", "stade", "théâtre", "cinéma", "musée",
+      "jardin", "parc", "square", "cimetière", "boulangerie", "épicerie",
+      // Objets du quotidien
+      "fenêtre", "porte", "mur", "toit", "escalier", "couloir", "pièce",
+      "table", "chaise", "canapé", "lit", "armoire", "tiroir", "étagère",
+      "livre", "stylo", "crayon", "cahier", "feuille", "enveloppe", "timbre",
+      "sac", "valise", "panier", "boîte", "bouteille", "verre", "tasse",
+      "assiette", "couteau", "fourchette", "cuillère", "casserole", "poêle",
+      "lampe", "bougie", "miroir", "tableau", "rideau", "tapis", "coussin",
+      "clé", "serrure", "cadenas", "marteau", "clou", "vis", "corde",
+      "tissu", "fil", "aiguille", "bouton", "fermeture", "chapeau", "écharpe",
+      "manteau", "veste", "chemise", "pantalon", "robe", "jupe", "chaussure",
+      "botte", "gant", "lunettes", "montre", "bague", "collier", "bracelet",
+      // Nourriture & boissons
+      "pain", "baguette", "croissant", "brioche", "gâteau", "tarte", "biscuit",
+      "fromage", "beurre", "crème", "yaourt", "lait", "oeuf", "miel",
+      "vin", "cidre", "bière", "jus", "thé", "café", "chocolat", "eau",
+      "soupe", "ragoût", "rôti", "poulet", "boeuf", "porc", "agneau",
+      "saumon", "thon", "crevette", "moule", "huître",
+      "pomme", "poire", "cerise", "fraise", "framboise", "raisin", "melon",
+      "pêche", "abricot", "orange", "citron", "banane", "ananas", "mangue",
+      "tomate", "carotte", "oignon", "ail", "poireau", "céleri", "navet",
+      "haricot", "lentille", "pois", "maïs", "blé", "riz", "pomme de terre",
+      // Transport & déplacement
+      "vélo", "moto", "voiture", "camion", "bus", "tram", "métro",
+      "train", "bateau", "ferry", "avion", "hélicoptère", "fusée",
+      "route", "autoroute", "piste", "rail", "canal", "tunnel",
+      // Arts, culture & loisirs
+      "musique", "chanson", "mélodie", "rythme", "danse", "ballet", "opéra",
+      "peinture", "dessin", "sculpture", "photographie", "gravure",
+      "roman", "poème", "conte", "fable", "légende", "mythe",
+      "journal", "magazine", "lettre", "affiche", "carte",
+      "jeu", "sport", "football", "tennis", "natation", "cyclisme",
+      "promenade", "voyage", "aventure", "découverte", "exploration",
+      // Matières & textures
+      "bois", "métal", "acier", "or", "argent", "cuivre", "plomb",
+      "plastique", "caoutchouc", "cuir", "laine", "coton", "soie", "velours",
+      // Personnes & relations
+      "enfant", "bébé", "garçon", "fille", "adolescent", "adulte", "vieillard",
+      "homme", "femme", "parent", "famille", "ami", "camarade", "voisin",
+      "médecin", "infirmier", "professeur", "étudiant", "artisan", "artiste",
+      "fermier", "pêcheur", "soldat", "policier", "pompier", "cuisinier",
+      "chanteur", "musicien", "peintre", "écrivain", "architecte", "ingénieur",
+      // Temps & saisons
+      "matin", "midi", "après-midi", "soir", "nuit", "minuit",
+      "jour", "semaine", "mois", "année", "siècle",
+      "printemps", "été", "automne", "hiver", "saison",
+      "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche",
+      "janvier", "février", "mars", "avril", "mai", "juin",
+      "juillet", "août", "septembre", "octobre", "novembre", "décembre",
+      // Sentiments & idées
+      "amour", "joie", "peur", "colère", "tristesse", "surprise", "honte",
+      "espoir", "rêve", "désir", "courage", "patience", "sagesse", "bonheur",
+      "liberté", "justice", "vérité", "beauté", "bonté", "amitié", "confiance",
+      "souvenir", "mémoire", "imagination", "pensée", "idée", "opinion",
+      // Corps & santé
+      "tête", "visage", "oeil", "nez", "bouche", "oreille", "joue",
+      "main", "bras", "jambe", "pied", "dos", "ventre", "coeur", "poumon",
+      "dent", "cheveu", "peau", "sang", "os", "muscle",
+      "santé", "maladie", "remède", "opération", "repos", "sommeil",
+      // Environnement & écologie
+      "forêt", "jungle", "savane", "désert", "toundra", "prairie",
+      "volcan", "glacier", "récif", "mangrove", "tourbière",
+      "biodiversité", "espèce", "habitat", "énergie", "solaire", "vent",
+      // Divers
+      "couleur", "lumière", "ombre", "bruit", "silence", "odeur", "parfum",
+      "chemin", "direction", "distance", "frontière", "limite", "centre",
+      "heure", "moment", "instant", "époque", "période", "durée",
+      "nombre", "chiffre", "lettre", "mot", "phrase", "langue", "accent",
+      "question", "réponse", "problème", "solution", "résultat", "succès"
     ];
 
     function pickTwo(list) {
